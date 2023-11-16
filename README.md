@@ -1,16 +1,7 @@
-# clinic_app
-
-A Doctor Appointment App
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# clinic
+![111](https://github.com/rishi058/Doctor-Appointment-Booking-App/assets/97884033/a243f7fb-3fa7-47af-90c9-77b88f0c207f)
+![222](https://github.com/rishi058/Doctor-Appointment-Booking-App/assets/97884033/1013cecb-a047-494f-9095-ed4704b430f2)
+![333](https://github.com/rishi058/Doctor-Appointment-Booking-App/assets/97884033/39d4b201-3c36-45de-9ffe-658db84d959d)
+![444](https://github.com/rishi058/Doctor-Appointment-Booking-App/assets/97884033/3c95c2c7-d7c2-4c3a-8b30-3f2f5b11874f)
+![555](https://github.com/rishi058/Doctor-Appointment-Booking-App/assets/97884033/51b6356c-8359-4817-bdb4-41a95a394319)
+![666](https://github.com/rishi058/Doctor-Appointment-Booking-App/assets/97884033/d137b6dd-edff-41fa-838f-f61e4abd899f)
