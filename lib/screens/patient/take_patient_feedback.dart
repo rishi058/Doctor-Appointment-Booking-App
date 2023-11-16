@@ -3,9 +3,9 @@
 import 'dart:convert';
 
 import 'package:awesome_dialog/awesome_dialog.dart';
-import 'package:clinic/models/staff_model.dart';
-import 'package:clinic/services/database.dart';
-import 'package:clinic/shared/loading.dart';
+import 'package:clinic_app/models/staff_model.dart';
+import 'package:clinic_app/services/database.dart';
+import 'package:clinic_app/shared/loading.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +15,7 @@ import '../../shared/colors.dart';
 import '../../Widgets/payment_page_card.dart';
 import '../../shared/typography.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:http/http.dart' as http;
+import 'package:clinic_app/services/email_js.dart';
 
 class TakeFeedbackPage extends StatefulWidget {
   const TakeFeedbackPage(
@@ -76,35 +76,7 @@ class _TakeFeedbackPageState extends State<TakeFeedbackPage> {
     super.didChangeDependencies();
   }
 
-  Future sendEmail(String feedContent, String staffEmail, String staffName, String staffPhone) async {
-    String message1 = "A New Feedback is added by one of your fellow patient.";
-    String message2 = "Feedback : $feedContent \n  Patient : $userName($userPhone) \n Physio Assigned : $staffName($staffPhone)" ;
 
-    final url = Uri.parse('https://api.emailjs.com/api/v1.0/email/send');
-    const serviceId = "service_v996fni";
-    const templateId = "template_n1xdf4n";
-    const userId = "uKQwGOIDB87MtK2bH";
-    const privateKey = "ngRkdjVP0tQRe5Wf6iIM0";
-    final response = await http.post(
-      url,
-      headers: {'Content-Type': 'application/json'},
-      body: json.encode({
-        "service_id": serviceId,
-        "template_id": templateId,
-        "user_id": userId,
-        "accessToken": privateKey,
-        "template_params": {
-          "name": message1,
-          "subject": "New FeedBack",
-          "message": message2,
-          "user_email": staffEmail,
-        }
-      }),
-    );
-    if (kDebugMode) {
-      print(response.body);
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -231,7 +203,7 @@ class _TakeFeedbackPageState extends State<TakeFeedbackPage> {
               widget.appointmentId,
               context);
           if (isSuccess) {
-            sendEmail(feed.text, staff[0].email, staff[0].staffName, staff[0].staffPhone);
+            sendEmailAboutFeedback(feed.text, staff[0].email, staff[0].staffName, staff[0].staffPhone, userName, userPhone);
             feed.text = "";
             AwesomeDialog(
                     dialogType: DialogType.success,

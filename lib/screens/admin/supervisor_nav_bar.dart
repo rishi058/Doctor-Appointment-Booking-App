@@ -1,5 +1,5 @@
-import 'package:clinic/screens/admin/supervisor_assigned.dart';
-import 'package:clinic/screens/admin/supervisor_pending.dart';
+import 'package:clinic_app/screens/admin/supervisor_assigned.dart';
+import 'package:clinic_app/screens/admin/supervisor_pending.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

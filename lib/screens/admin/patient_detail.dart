@@ -1,5 +1,5 @@
-import 'package:clinic/Widgets/all_appointments_box.dart';
-import 'package:clinic/models/patient_model.dart';
+import 'package:clinic_app/Widgets/all_appointments_box.dart';
+import 'package:clinic_app/models/patient_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';

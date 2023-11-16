@@ -1,4 +1,4 @@
-import 'package:clinic/Widgets/current_appointments_box.dart';
+import 'package:clinic_app/Widgets/current_appointments_box.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';

@@ -1,5 +1,5 @@
-import 'package:clinic/models/staff_model.dart';
-import 'package:clinic/services/authenticaton.dart';
+import 'package:clinic_app/models/staff_model.dart';
+import 'package:clinic_app/services/authenticaton.dart';
 import 'package:flutter/cupertino.dart';
 
 class StaffProvider with ChangeNotifier {

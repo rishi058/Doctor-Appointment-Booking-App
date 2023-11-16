@@ -1,5 +1,5 @@
-import 'package:clinic/Widgets/all_appointments_box.dart';
-import 'package:clinic/shared/loading.dart';
+import 'package:clinic_app/Widgets/all_appointments_box.dart';
+import 'package:clinic_app/shared/loading.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';

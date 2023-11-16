@@ -1,5 +1,5 @@
-import 'package:clinic/shared/colors.dart';
-import 'package:clinic/shared/typography.dart';
+import 'package:clinic_app/shared/colors.dart';
+import 'package:clinic_app/shared/typography.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

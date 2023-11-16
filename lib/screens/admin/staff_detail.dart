@@ -1,7 +1,7 @@
-import 'package:clinic/Widgets/all_appointments_box.dart';
-import 'package:clinic/models/appointment_model.dart';
-import 'package:clinic/models/staff_model.dart';
-import 'package:clinic/shared/loading.dart';
+import 'package:clinic_app/Widgets/all_appointments_box.dart';
+import 'package:clinic_app/models/appointment_model.dart';
+import 'package:clinic_app/models/staff_model.dart';
+import 'package:clinic_app/shared/loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';

@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "clinic" "\0"
+            VALUE "CompanyName", "com.devwizards" "\0"
+            VALUE "FileDescription", "clinic_app" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "clinic" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "clinic.exe" "\0"
-            VALUE "ProductName", "clinic" "\0"
+            VALUE "InternalName", "clinic_app" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2023 com.devwizards. All rights reserved." "\0"
+            VALUE "OriginalFilename", "clinic_app.exe" "\0"
+            VALUE "ProductName", "clinic_app" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

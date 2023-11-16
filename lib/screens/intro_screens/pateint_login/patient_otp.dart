@@ -1,6 +1,6 @@
-import 'package:clinic/services/database.dart';
-import 'package:clinic/shared/loading.dart';
-import 'package:clinic/shared/shared.dart';
+import 'package:clinic_app/services/database.dart';
+import 'package:clinic_app/shared/loading.dart';
+import 'package:clinic_app/shared/shared.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';

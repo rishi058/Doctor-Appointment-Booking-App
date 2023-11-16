@@ -1,4 +1,4 @@
-import 'package:clinic/shared/loading.dart';
+import 'package:clinic_app/shared/loading.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';

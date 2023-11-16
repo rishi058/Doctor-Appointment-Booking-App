@@ -1,9 +1,9 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:awesome_dialog/awesome_dialog.dart';
-import 'package:clinic/services/Shared_Pref.dart';
-import 'package:clinic/services/authenticaton.dart';
-import 'package:clinic/shared/loading.dart';
+import 'package:clinic_app/services/Shared_Pref.dart';
+import 'package:clinic_app/services/authenticaton.dart';
+import 'package:clinic_app/shared/loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

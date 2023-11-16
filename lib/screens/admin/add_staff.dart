@@ -1,7 +1,7 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
-import 'package:clinic/services/database.dart';
-import 'package:clinic/shared/loading.dart';
-import 'package:clinic/shared/shared.dart';
+import 'package:clinic_app/services/database.dart';
+import 'package:clinic_app/shared/loading.dart';
+import 'package:clinic_app/shared/shared.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

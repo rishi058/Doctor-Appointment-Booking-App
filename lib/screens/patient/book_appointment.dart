@@ -1,20 +1,17 @@
-import 'dart:convert';
-
 import 'package:awesome_dialog/awesome_dialog.dart';
-import 'package:clinic/shared/colors.dart';
-import 'package:clinic/shared/loading.dart';
-import 'package:clinic/shared/typography.dart';
-import 'package:clinic/models/patient_model.dart';
-import 'package:clinic/services/database.dart';
-import 'package:clinic/shared/shared.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:clinic_app/shared/colors.dart';
+import 'package:clinic_app/shared/loading.dart';
+import 'package:clinic_app/shared/typography.dart';
+import 'package:clinic_app/models/patient_model.dart';
+import 'package:clinic_app/services/database.dart';
+import 'package:clinic_app/shared/shared.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
-import 'package:http/http.dart' as http;
+import 'package:clinic_app/services/firebase_push_notification.dart';
+import 'package:clinic_app/services/email_js.dart';
 
 class BookAppointment extends StatefulWidget {
   const BookAppointment({Key? key}) : super(key: key);
@@ -382,9 +379,9 @@ class _BookAppointmentState extends State<BookAppointment> {
           if (isSuccess) {
             Shared().snackbar(
               context,
-              'Appointment Request Successfull',
+              'Appointment Request Successful',
             );
-            sendEmail();
+            sendEmailAboutNewAppointment(name.text, phoneNo.text);
             notificationSender();
           } else {
             Shared().snackbar(
@@ -413,119 +410,6 @@ class _BookAppointmentState extends State<BookAppointment> {
     );
   }
 
-  Future sendEmail() async {
-    String message = "A New Appointment has been requested by one of you fellow patient ${name.text} whose contact detail is ${phoneNo.text} ";
-    final url = Uri.parse('https://api.emailjs.com/api/v1.0/email/send');
-    const serviceId = "service_v996fni";
-    const templateId = "template_n1xdf4n";
-    const userId = "uKQwGOIDB87MtK2bH";
-    const privateKey = "ngRkdjVP0tQRe5Wf6iIM0";
-    final response = await http.post(
-      url,
-      headers: {'Content-Type': 'application/json'},
-      body: json.encode({
-        "service_id": serviceId,
-        "template_id": templateId,
-        "user_id": userId,
-        "accessToken": privateKey,
-        "template_params": {
-          "name": "",
-          "subject": "New Appointment",
-          "message": message,
-          "user_email": "rishiqwerty01@gmail.com",
-        }
-      }),
-    );
-    if (kDebugMode) {
-      print('-----------------');
-      print(response.statusCode);
-      print(response.body);
-    }
-  }
 
-  void notificationSender() async {
-    DocumentSnapshot documentSnapshot = await FirebaseFirestore.instance
-        .collection('Tokens')
-        .doc('superVisorToken')
-        .get();
-    String token = (documentSnapshot.data()! as Map<String, dynamic>)['token'];
-    if (kDebugMode) {
-      print(token);
-    }
-    sendPushMessageSupervisor(token);
-    DocumentSnapshot documentSnapshot1 = await FirebaseFirestore.instance
-        .collection('Tokens')
-        .doc('adminToken')
-        .get();
-    String token1 =
-        (documentSnapshot1.data()! as Map<String, dynamic>)['token'];
-    if (kDebugMode) {
-      print(token);
-    }
-    sendPushMessageAdmin(token1);
-  }
 
-  void sendPushMessageSupervisor(String token) async {
-    try {
-      await http.post(
-        Uri.parse('https://fcm.googleapis.com/fcm/send'),
-        headers: <String, String>{
-          'Content-Type': 'application/json',
-          'Authorization':
-              'key=AAAAwCZk4RU:APA91bGRH22befoUBp5W3laVm11ZhYumSp0On6NfQw-T_jYcgNThCOr_1ofGwYf3jX7s0L1GgHkToHMASHZ1_yqNFmwPZUonS74xmcIMkHqVjOSc1z0KcxMSzSHfZjjXCQghxJMeZFPu'
-        },
-        body: jsonEncode(<String, dynamic>{
-          'priority': 'high',
-          'data': <String, dynamic>{
-            'click_action': 'FLUTTER_NOTIFICATION_CLICK',
-            'status': 'done',
-            'body': 'Assign appointment to staff',
-            'title': 'New Appointment',
-          },
-          "notification": <String, dynamic>{
-            "title": 'New Appointment',
-            "body": 'Assign appointment to staff',
-            "android_channel_id": "dbfood"
-          },
-          "to": token,
-        }),
-      );
-    } catch (e) {
-      if (kDebugMode) {
-        print("error push notification");
-      }
-    }
-  }
-
-  void sendPushMessageAdmin(String token) async {
-    try {
-      await http.post(
-        Uri.parse('https://fcm.googleapis.com/fcm/send'),
-        headers: <String, String>{
-          'Content-Type': 'application/json',
-          'Authorization':
-              'key=AAAAwCZk4RU:APA91bGRH22befoUBp5W3laVm11ZhYumSp0On6NfQw-T_jYcgNThCOr_1ofGwYf3jX7s0L1GgHkToHMASHZ1_yqNFmwPZUonS74xmcIMkHqVjOSc1z0KcxMSzSHfZjjXCQghxJMeZFPu'
-        },
-        body: jsonEncode(<String, dynamic>{
-          'priority': 'high',
-          'data': <String, dynamic>{
-            'click_action': 'FLUTTER_NOTIFICATION_CLICK',
-            'status': 'done',
-            'body': 'You have a new Appointment admin.',
-            'title': 'New Appointment',
-          },
-          "notification": <String, dynamic>{
-            "title": 'New Appointment',
-            "body": 'Assign appointment to staff',
-            "android_channel_id": "dbfood"
-          },
-          "to": token,
-        }),
-      );
-    } catch (e) {
-      if (kDebugMode) {
-        print("error push notification");
-      }
-    }
-  }
 }

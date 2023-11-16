@@ -3,9 +3,9 @@
 import 'dart:convert';
 
 import 'package:awesome_dialog/awesome_dialog.dart';
-import 'package:clinic/services/database.dart';
-import 'package:clinic/shared/shared.dart';
-import 'package:clinic/shared/typography.dart';
+import 'package:clinic_app/services/database.dart';
+import 'package:clinic_app/shared/shared.dart';
+import 'package:clinic_app/shared/typography.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';

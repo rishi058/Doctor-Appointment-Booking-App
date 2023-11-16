@@ -1,6 +1,6 @@
-import 'package:clinic/models/staff_model.dart';
-import 'package:clinic/screens/admin/staff_detail.dart';
-import 'package:clinic/shared/loading.dart';
+import 'package:clinic_app/models/staff_model.dart';
+import 'package:clinic_app/screens/admin/staff_detail.dart';
+import 'package:clinic_app/shared/loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';

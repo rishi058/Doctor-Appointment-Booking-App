@@ -1,5 +1,5 @@
-import 'package:clinic/screens/patient/take_patient_feedback.dart';
-import 'package:clinic/shared/typography.dart';
+import 'package:clinic_app/screens/patient/take_patient_feedback.dart';
+import 'package:clinic_app/shared/typography.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

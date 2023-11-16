@@ -1,11 +1,11 @@
 {
-    "name": "clinic",
-    "short_name": "clinic",
+    "name": "clinic_app",
+    "short_name": "clinic_app",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "A Doctor Appointment App",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

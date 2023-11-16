@@ -1,7 +1,7 @@
-import 'package:clinic/models/patient_model.dart';
-import 'package:clinic/models/staff_model.dart';
-import 'package:clinic/screens/intro_screens/pateint_login/patient_otp.dart';
-import 'package:clinic/shared/shared.dart';
+import 'package:clinic_app/models/patient_model.dart';
+import 'package:clinic_app/models/staff_model.dart';
+import 'package:clinic_app/screens/intro_screens/pateint_login/patient_otp.dart';
+import 'package:clinic_app/shared/shared.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
@@ -67,7 +67,9 @@ class Authentication {
       if (kDebugMode) {
         print(e);
       }
-      Shared().snackbar(context, 'Some error Occurred');
+      if(context.mounted){
+        Shared().snackbar(context, 'Some error Occurred');
+      }
     }
 
     return isSuccess;
@@ -81,15 +83,17 @@ class Authentication {
             .pushNamedAndRemoveUntil('welcome-page1', (route) => false);
       });
     } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          backgroundColor: Colors.redAccent,
-          content: Text(
-            'Error in Signing Out ! Try Again !! ',
-            textAlign: TextAlign.center,
+      if(context.mounted){
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            backgroundColor: Colors.redAccent,
+            content: Text(
+              'Error in Signing Out ! Try Again !! ',
+              textAlign: TextAlign.center,
+            ),
           ),
-        ),
-      );
+        );
+      }
     }
   }
 
@@ -109,13 +113,19 @@ class Authentication {
       return isSuccess;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
-        Shared().snackbar(context, 'No user found for that email.');
+        if(context.mounted){
+          Shared().snackbar(context, 'No user found for that email.');
+        }
       } else if (e.code == 'wrong-password') {
-        Shared().snackbar(context, 'Wrong password provided for that user.');
+        if(context.mounted){
+          Shared().snackbar(context, 'Wrong password provided for that user.');
+        }
       }
       return false;
     } catch (e) {
-      Shared().snackbar(context, 'Some Error Occurred');
+      if(context.mounted){
+        Shared().snackbar(context, 'Some Error Occurred');
+      }
       return false;
     }
   }
@@ -126,7 +136,7 @@ class Authentication {
     try {
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(
-        email: "clinic9190@gmail.com",
+        email: "rishiqwerty01@gmail.com",
         password: password,
       )
           .then((value) {
@@ -135,13 +145,19 @@ class Authentication {
       return isSuccess;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
-        Shared().snackbar(context, 'No user found for that email.');
+        if(context.mounted){
+          Shared().snackbar(context, 'No user found for that email.');
+        }
       } else if (e.code == 'wrong-password') {
-        Shared().snackbar(context, 'Wrong password provided for that user.');
+        if(context.mounted){
+          Shared().snackbar(context, 'Wrong password provided for that user.');
+        }
       }
       return false;
     } catch (e) {
-      Shared().snackbar(context, 'Some Error Occurred');
+      if(context.mounted){
+        Shared().snackbar(context, 'Some Error Occurred');
+      }
       return false;
     }
   }
@@ -151,7 +167,7 @@ class Authentication {
     try {
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(
-        email: "supervisor9190@gmail.com",
+        email: "rishi.helloworld@gmail.com",
         password: password,
       )
           .then((value) {
@@ -160,13 +176,19 @@ class Authentication {
       return isSuccess;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
-        Shared().snackbar(context, 'No user found for that email.');
+        if(context.mounted){
+          Shared().snackbar(context, 'No user found for that email.');
+        }
       } else if (e.code == 'wrong-password') {
-        Shared().snackbar(context, 'Wrong password provided for that user.');
+        if(context.mounted){
+          Shared().snackbar(context, 'Wrong password provided for that user.');
+        }
       }
       return false;
     } catch (e) {
-      Shared().snackbar(context, 'Some Error Occurred');
+      if(context.mounted){
+        Shared().snackbar(context, 'Some Error Occurred');
+      }
       return false;
     }
   }
@@ -179,10 +201,14 @@ class Authentication {
       );
       return true;
     } on FirebaseAuthException catch (e) {
-      Shared().snackbar(context, e.code.toString());
+      if(context.mounted){
+        Shared().snackbar(context, e.code.toString());
+      }
       return false;
     } catch (e) {
-      Shared().snackbar(context, e.toString());
+      if(context.mounted){
+        Shared().snackbar(context, e.toString());
+      }
       return false;
     }
   }

@@ -1,13 +1,13 @@
 // ignore_for_file: unused_element
 
-import 'package:clinic/models/appointment_model.dart';
-import 'package:clinic/models/feedback_model.dart';
-import 'package:clinic/models/patient_model.dart';
-import 'package:clinic/models/staff_model.dart';
-import 'package:clinic/provider/patient_provider.dart';
-import 'package:clinic/provider/staff_provider.dart';
-import 'package:clinic/screens/intro_screens/splash_screen.dart';
-import 'package:clinic/services/database.dart';
+import 'package:clinic_app/models/appointment_model.dart';
+import 'package:clinic_app/models/feedback_model.dart';
+import 'package:clinic_app/models/patient_model.dart';
+import 'package:clinic_app/models/staff_model.dart';
+import 'package:clinic_app/provider/patient_provider.dart';
+import 'package:clinic_app/provider/staff_provider.dart';
+import 'package:clinic_app/screens/intro_screens/splash_screen.dart';
+import 'package:clinic_app/services/database.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +16,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'all_pages.dart';
+import 'firebase_options.dart';
 
 Future<void> _firebaseMessagingBackgroundHandler(
     RemoteMessage remoteMessage) async {
@@ -26,7 +27,9 @@ Future<void> _firebaseMessagingBackgroundHandler(
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   await FirebaseMessaging.instance.getInitialMessage();
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])

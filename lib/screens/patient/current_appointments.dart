@@ -1,6 +1,6 @@
-import 'package:clinic/Widgets/current_appointment_box.dart';
-import 'package:clinic/shared/loading.dart';
-import 'package:clinic/models/appointment_model.dart';
+import 'package:clinic_app/Widgets/current_appointment_box.dart';
+import 'package:clinic_app/shared/loading.dart';
+import 'package:clinic_app/models/appointment_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';

@@ -1,6 +1,6 @@
-import 'package:clinic/Widgets/dashboard_box.dart';
-import 'package:clinic/screens/admin/forgot_password.dart';
-import 'package:clinic/shared/typography.dart';
+import 'package:clinic_app/Widgets/dashboard_box.dart';
+import 'package:clinic_app/screens/admin/forgot_password.dart';
+import 'package:clinic_app/shared/typography.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';

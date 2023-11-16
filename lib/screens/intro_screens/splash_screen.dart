@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:clinic/screens/intro_screens/operator_options/operator_page1.dart';
-import 'package:clinic/screens/patient/dashborad.dart';
-import 'package:clinic/shared/route_transition.dart';
+import 'package:clinic_app/screens/intro_screens/operator_options/operator_page1.dart';
+import 'package:clinic_app/screens/patient/dashborad.dart';
+import 'package:clinic_app/shared/route_transition.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -42,7 +42,6 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Database().refresh();
     getUserLoggedInStatus();
   }
 

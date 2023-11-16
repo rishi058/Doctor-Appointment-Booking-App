@@ -1,6 +1,6 @@
-import 'package:clinic/services/authenticaton.dart';
-import 'package:clinic/shared/loading.dart';
-import 'package:clinic/shared/shared.dart';
+import 'package:clinic_app/services/authenticaton.dart';
+import 'package:clinic_app/shared/loading.dart';
+import 'package:clinic_app/shared/shared.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -29,8 +29,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
 
   @override
   void initState() {
-    supervisorEmailcontroller.text = "supervisor9190@gmail.com";
-    adminEmailcontroller.text = "clinic9190@gmail.com";
+    supervisorEmailcontroller.text = "rishi.helloworld@gmail.com";
+    adminEmailcontroller.text = "rishiqwerty01@gmail.com";
     super.initState();
   }
 

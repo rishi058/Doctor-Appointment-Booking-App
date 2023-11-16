@@ -1,5 +1,5 @@
-import 'package:clinic/services/authenticaton.dart';
-import 'package:clinic/shared/loading.dart';
+import 'package:clinic_app/services/authenticaton.dart';
+import 'package:clinic_app/shared/loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

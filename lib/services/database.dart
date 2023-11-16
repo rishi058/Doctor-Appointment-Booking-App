@@ -3,12 +3,12 @@
 import 'dart:async';
 import 'dart:math';
 
-import 'package:clinic/models/feedback_model.dart';
-import 'package:clinic/models/staff_model.dart';
-import 'package:clinic/shared/colors.dart';
-import 'package:clinic/models/appointment_model.dart';
-import 'package:clinic/models/patient_model.dart';
-import 'package:clinic/shared/shared.dart';
+import 'package:clinic_app/models/feedback_model.dart';
+import 'package:clinic_app/models/staff_model.dart';
+import 'package:clinic_app/shared/colors.dart';
+import 'package:clinic_app/models/appointment_model.dart';
+import 'package:clinic_app/models/patient_model.dart';
+import 'package:clinic_app/shared/shared.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -76,19 +76,6 @@ class Database {
     }
   }
 
-  Future refresh() async {
-    try {
-      QuerySnapshot snap = await patients
-          .where('patientName', isEqualTo: '${USER().patient}58')
-          .get();
-      var myData1 = snap.docs.map((e) => e.data()).toList();
-      if (myData1.isNotEmpty) {
-        getData();
-      }
-    } catch (e) {
-      rethrow;
-    }
-  }
 
   Future<bool> updatePatientProfile(String uid, String picUrl, String name,
       String number, String address, String age, BuildContext ctx) async {

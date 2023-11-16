@@ -1,9 +1,9 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'dart:io';
-import 'package:clinic/shared/loading.dart';
-import 'package:clinic/shared/typography.dart';
-import 'package:clinic/models/staff_model.dart';
+import 'package:clinic_app/shared/loading.dart';
+import 'package:clinic_app/shared/typography.dart';
+import 'package:clinic_app/models/staff_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
