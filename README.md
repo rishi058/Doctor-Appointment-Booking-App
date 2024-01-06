@@ -1,7 +1,7 @@
 
 # Doctor-Appointment-Booking-App (Authentic Clinic).
 
-#### Playstore link (Operated by a Actual Clinic) [https://play.google.com/store/apps/details?id=com.devwizards.clinic]
+####  [View on playstore(Operated by a Actual Clinic)](https://play.google.com/store/apps/details?id=com.devwizards.clinic)
 
 ## Tech Stack :-
     1. Flutter SDK + Dart Language (For Frontend & Backend).
