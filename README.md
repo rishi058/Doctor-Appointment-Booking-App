@@ -53,14 +53,11 @@
 
 ### (V) Used provider-package for state-management & stream database.
 
+# App Interface & Flow:-
+![image](https://github.com/rishi058/Doctor-Appointment-Booking-App/assets/97884033/182a5537-997a-4506-94ce-bdc3844116b9)
 
-
-
-## User-Interface:-
-
-![333](https://github.com/rishi058/Doctor-Appointment-Booking-App/assets/97884033/39d4b201-3c36-45de-9ffe-658db84d959d)
-![444](https://github.com/rishi058/Doctor-Appointment-Booking-App/assets/97884033/3c95c2c7-d7c2-4c3a-8b30-3f2f5b11874f)
-![555](https://github.com/rishi058/Doctor-Appointment-Booking-App/assets/97884033/51b6356c-8359-4817-bdb4-41a95a394319)
-![666](https://github.com/rishi058/Doctor-Appointment-Booking-App/assets/97884033/d137b6dd-edff-41fa-838f-f61e4abd899f)
+## Bugs to resolve :-
+     1. Scroll is not working.
+     2. Email Js, Push notification is not working.
 
 
